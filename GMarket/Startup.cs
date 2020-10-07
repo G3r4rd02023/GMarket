@@ -33,6 +33,9 @@ namespace GMarket
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
 
+
+            services.AddTransient<SeedDb>();
+
             services.AddDbContext<DataContext>(cfg =>
             {
                 cfg.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"));
